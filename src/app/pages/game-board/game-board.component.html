@@ -1,0 +1,9 @@
+<div class="main-game-container">
+  <top-groups [groups]="board.topGroups|shuffle"></top-groups>
+  <h2 class="gmae-desc">{{board.description}}</h2>
+
+
+  <bottom-groups [groups]="board.bottomGroups|shuffle"></bottom-groups>
+
+  <h1 *ngIf="false" #success>Good job !!!</h1>
+</div>

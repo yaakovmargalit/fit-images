@@ -1,0 +1,12 @@
+
+<div [routerLink]="['game',game.id]">
+<div class="game-preview">
+    <img [src]="game.previewImg" alt="">
+    <p >{{game.name}}</p>
+    <button class="remove-btn" (click)="$event.stopPropagation() ;onRemoveGame()">
+        <mat-icon >delete</mat-icon>
+    </button>
+</div>
+</div>
+
+

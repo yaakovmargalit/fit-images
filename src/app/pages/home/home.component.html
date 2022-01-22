@@ -1,0 +1,12 @@
+<div class="home">
+    <div class="game-list">
+        <game-preview (removeGame)="removeGame($event)" *ngFor="let game of boards$|async" [game]="game"></game-preview>
+
+        <div [routerLink]="['new-game']">
+            <div class=" game-preview ">
+                <img src="https://cdn.pixabay.com/photo/2018/06/10/22/48/chess-3467512_960_720.jpg" alt="">
+                <p>Create a game</p>
+            </div>
+        </div>
+    </div>
+</div>

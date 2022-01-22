@@ -1,0 +1,53 @@
+.group-img{
+    width: 150px;
+    height: 100px;
+    border-radius: 3px;
+    margin-inline: 3px;
+}
+
+.group-box{
+    border: 5px solid rgb(229, 195, 245);
+    padding: 10px;
+    display: flex;
+}
+
+.bottom-box{
+    border: none;
+    background-color: hotpink;
+}
+
+.group-correct{
+    border: 5px solid rgba(172, 255, 47, 0.521);
+    background-color: rgba(172, 255, 47, 0.521);
+    padding: 10px;
+    display: flex;
+    border-radius: 5px;
+}
+.group-item{
+    display: flex;
+    gap: 4px;
+}
+.empty{
+    width: 150px;
+    height: 100px;
+    border-radius: 3px;
+    border: 2px black dashed;
+    background-color: rgb(221, 203, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  .cdk-drag-placeholder {
+    opacity: 0;
+    width: 0;
+  }

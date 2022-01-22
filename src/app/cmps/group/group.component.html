@@ -1,0 +1,22 @@
+<div
+*ngIf="group.images.length"
+[id]="group.type"
+cdkDropList
+[cdkDropListData]="group.images"
+[cdkDropListConnectedTo]="group.type"
+[ngClass]="{'group-box':group.images.length===1,'group-correct':group.images.length===2}"
+[ngClass]="{'bottom-box':!group.top}"
+class="group-box"
+(cdkDropListDropped)="drop($event)">
+<div
+  class="group-item"
+  [cdkDragDisabled]="group.top"
+  *ngFor="let url of group.images"
+  [cdkDragData]="url"
+  cdkDrag>
+  <div *ngIf="group.images.length===1&&group.top" class="empty">?</div>
+  <img class="group-img" [src]="url" alt="">
+</div>
+</div>
+
+

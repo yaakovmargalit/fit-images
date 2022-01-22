@@ -1,0 +1,38 @@
+<div class="new-game">
+
+    <form [formGroup]="form">
+        <div class="top-inputs">
+            <label class="top-fild" for=""> Game Name
+                <input type="text" formControlName="name">
+            </label>
+            <label class="top-fild" for="">
+                Game explanation
+                <input type="text" formControlName="description">
+            </label>
+        </div>
+        
+        <div formArrayName="groups" class="groups">
+            <div class="new-group" *ngFor="let group of groups.controls; let i = index" [formGroupName]="i">
+                <label class="new-img">
+                    <h2 *ngIf="!this.groups.controls[i].value.topImg ">Select image 1</h2>
+                    <img *ngIf="this.groups.controls[i].value.topImg" class="new-img"
+                    [src]="this.groups.controls[i].value.topImg" alt="top">
+                    <input hidden (change)="onUploadImgTop($event ,i)" type="file" formControlName="topImg">
+                </label>
+                <label class="new-img">
+                    <h2 *ngIf="!this.groups.controls[i].value.bottomImg">Select image 2</h2>
+                    <img *ngIf="this.groups.controls[i].value.bottomImg" class="new-img"
+                    [src]="this.groups.controls[i].value.bottomImg" alt="bottom">
+                    <input class="" hidden (change)="onUploadImgBottom($event ,i)" type="file" formControlName="bottomImg">
+                </label>
+            </div>
+            
+        </div>
+        <!-- <input type="text" formControlName="previewImg"> -->
+    </form>
+    <div class="btns-box">
+        <button (click)="onAddGroup()">Add group</button>
+        <button (click)="saveGame()">Save game</button>
+    </div>
+    <!-- <pre>{{form.value|json}}</pre> -->
+</div>
